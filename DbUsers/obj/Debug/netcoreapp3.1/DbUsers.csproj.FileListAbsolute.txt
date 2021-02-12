@@ -1,0 +1,15 @@
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.exe
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.deps.json
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.runtimeconfig.json
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.runtimeconfig.dev.json
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.dll
+D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\DbUsers.pdb
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.csprojAssemblyReference.cache
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.Form1.resources
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.csproj.GenerateResource.cache
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.AssemblyInfoInputs.cache
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.AssemblyInfo.cs
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.csproj.CoreCompileInputs.cache
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.dll
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.pdb
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.genruntimeconfig.cache

@@ -1,4 +1,5 @@
 ﻿using System;
+using DbUsers.Entities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace DbUsers
         public Form1()
         {
             InitializeComponent();
+            EFContext context = new EFContext();
+            EFSeeder.SeedDatabase(context);
         }
 
     }

@@ -37,6 +37,8 @@ namespace DbUsers
             this.txtNameRole = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pbPhoto = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +79,11 @@ namespace DbUsers
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(40, 221);
+            this.label4.Location = new System.Drawing.Point(43, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 28);
+            this.label4.Size = new System.Drawing.Size(206, 28);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Фото";
+            this.label4.Text = "Додати фото актора";
             // 
             // txtNameUser
             // 
@@ -114,11 +116,22 @@ namespace DbUsers
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // pbPhoto
+            // 
+            this.pbPhoto.Location = new System.Drawing.Point(43, 230);
+            this.pbPhoto.Name = "pbPhoto";
+            this.pbPhoto.Size = new System.Drawing.Size(297, 189);
+            this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPhoto.TabIndex = 8;
+            this.pbPhoto.TabStop = false;
+            this.pbPhoto.Click += new System.EventHandler(this.pbPhoto_Click);
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 450);
+            this.Controls.Add(this.pbPhoto);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNameRole);
@@ -129,6 +142,7 @@ namespace DbUsers
             this.Controls.Add(this.label1);
             this.Name = "EditUserForm";
             this.Text = "Редагування даних актора";
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +158,6 @@ namespace DbUsers
         private System.Windows.Forms.TextBox txtNameRole;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pbPhoto;
     }
 }

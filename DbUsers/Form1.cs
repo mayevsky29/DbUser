@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DbUsers
 {
@@ -32,6 +33,7 @@ namespace DbUsers
             var list = query.Select(x => new
             {
                 Id = x.UserId,
+                Image = x.User.Image,
                 Name = x.User.NormalizedUserName+" "+x.User.UserName,
                 //UserName + " " + x.NormalizedUserName,
                 RoleName = x.Role.Name,
@@ -41,9 +43,11 @@ namespace DbUsers
 
             foreach (var item in list)
             {
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "images");
                 object[] row =
                 {
                     item.Id,
+                    item.Image == null ? null: Image.FromFile(Path.Combine(path, item.Image)),
                     item.Name,
                     item.RoleName,
                     item.Email

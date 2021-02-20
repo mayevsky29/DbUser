@@ -22,6 +22,8 @@ namespace DbUsers.Entities
 
         [Required, StringLength(250)]
         public string PasswordHash { get; set; }
+        [StringLength(255)]
+        public string Image { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
         
     }

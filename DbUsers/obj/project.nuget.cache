@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jwxzz7QVxGE9gi75iXhps7YFkhoIJsSLeQZ/0rdSr7/MJMmXLtOoU8eLx+HK9imOidkV0DyPAAlJftc3ZVrYWA==",
+  "dgSpecHash": "HPdg4SkMaqtK9RgHiFpENk07/ahunUcnm9Eu57GDOFOJ6G/kHKcMFwn6FoMOI5nRQef4YJX9IxIw0HfpRwjF+w==",
   "success": true,
   "projectFilePath": "D:\\Shag\\C#\\DZ\\DbUser\\DbUsers\\DbUsers.csproj",
   "expectedPackageFiles": [
@@ -24,11 +24,14 @@
     "C:\\Users\\Mayevsky\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.12\\microsoft.extensions.logging.abstractions.3.1.12.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\microsoft.extensions.options\\3.1.12\\microsoft.extensions.options.3.1.12.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.12\\microsoft.extensions.primitives.3.1.12.nupkg.sha512",
+    "C:\\Users\\Mayevsky\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+    "C:\\Users\\Mayevsky\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\npgsql\\4.1.8\\npgsql.4.1.8.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.11\\npgsql.entityframeworkcore.postgresql.3.1.11.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Mayevsky\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
     "C:\\Users\\Mayevsky\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []

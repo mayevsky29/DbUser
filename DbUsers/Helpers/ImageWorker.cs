@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Text;
 
 namespace DbUsers.Helpers
@@ -52,5 +53,9 @@ namespace DbUsers.Helpers
             }
         }
 
+        internal static IDisposable CreateImage(MemoryStream memoryStream, int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace DbUsers
         private readonly int _id;
         private readonly EFContext _context;
         private string fileSelected = string.Empty;
+
+        public string oldPhoto { get; set; } = null;
         public EditUserForm(int id)
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace DbUsers
             var user = _context.Users
              .SingleOrDefault(p => p.Id == _id);
            txtNameUser.Text = $"{user.UserName} {user.NormalizedUserName}";
+
             txtEmail.Text = user.Email;
             
             var role = _context.Roles
@@ -46,7 +50,11 @@ namespace DbUsers
             {
                 var dir = Path.Combine(Directory.GetCurrentDirectory(),
                     "images", user.Image);
-                pbPhoto.Image = Image.FromFile(dir);
+                if (File.Exists(dir))
+                {
+                    pbPhoto.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(dir)));
+                }
+               
             }
             //  MessageBox.Show(dir);
 
@@ -58,27 +66,37 @@ namespace DbUsers
                .SingleOrDefault(p => p.Id == _id);
             user.UserName = txtNameUser.Text;
             user.Email = txtEmail.Text;
-          
+
             var role = _context.Roles
                 .SingleOrDefault(p => p.Id == _id);
             role.Name = txtNameRole.Text;
-            
+            string oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "images", user.Image);
+
             if (!string.IsNullOrEmpty(fileSelected))
             {
+               
                 string ext = Path.GetExtension(fileSelected);
                 string fileName = Path.GetRandomFileName() + ext;
                 string fileSavePath = Path.Combine(Directory.GetCurrentDirectory(), "images", fileName);
 
-               var bmp = ImageWorker.CreateImage(
-                   new Bitmap(Image.FromFile(fileSelected)), 75, 75);
-                bmp.Save(fileSavePath);
+                using (var bmp = ImageWorker.CreateImage(
+                    new MemoryStream(File.ReadAllBytes(fileSelected)), 75, 75))
+                {
+                   // bmp.Save(fileSavePath);
+                    user.Image = fileName;
+                }
 
                // File.Copy(fileSelected, fileSavePath);
-                user.Image = fileName;
+               // user.Image = fileName;
+                if (File.Exists(oldImagePath))
+                {
+                    this.oldPhoto = oldImagePath;
 
-                
+                }
+
             }
             _context.SaveChanges();
+            _context.Dispose();
             this.DialogResult = DialogResult.OK;
         }
 
@@ -91,7 +109,8 @@ namespace DbUsers
             {
                 //fileSelected = dlg.FileName;
                 fileSelected = dlg.FileName;
-                pbPhoto.Image = Image.FromFile(dlg.FileName);
+                //pbPhoto.Image = Image.FromFile(dlg.FileName);
+                pbPhoto.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(dlg.FileName)));
             }
         }
     }

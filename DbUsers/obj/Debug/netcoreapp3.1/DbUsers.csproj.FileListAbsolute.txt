@@ -38,3 +38,5 @@ D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.csproj.CopyComplete
 D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.EditUserForm.resources
 D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Shag\C#\DZ\DbUser\DbUsers\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.Properties.Resources.resources
+D:\Shag\C#\DZ\DbUser\DbUsers\obj\Debug\netcoreapp3.1\DbUsers.TreeViewForm.resources

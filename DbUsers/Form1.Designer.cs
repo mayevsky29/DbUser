@@ -29,14 +29,16 @@ namespace DbUsers
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgDateUsers = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnTreeView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDateUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,37 +53,14 @@ namespace DbUsers
             this.colName,
             this.colRole,
             this.colEmail});
-            this.dgDateUsers.Location = new System.Drawing.Point(25, 53);
+            this.dgDateUsers.Location = new System.Drawing.Point(22, 59);
+            this.dgDateUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgDateUsers.Name = "dgDateUsers";
             this.dgDateUsers.ReadOnly = true;
             this.dgDateUsers.RowHeadersWidth = 51;
             this.dgDateUsers.RowTemplate.Height = 29;
-            this.dgDateUsers.Size = new System.Drawing.Size(776, 214);
+            this.dgDateUsers.Size = new System.Drawing.Size(679, 160);
             this.dgDateUsers.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.Navy;
-            this.btnEdit.Location = new System.Drawing.Point(25, 319);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(151, 60);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Редагувати";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(326, 319);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(151, 60);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Вихід";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // colId
             // 
@@ -93,6 +72,9 @@ namespace DbUsers
             // 
             // colPhoto
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "System.Drawing.Bitmap";
+            this.colPhoto.DefaultCellStyle = dataGridViewCellStyle2;
             this.colPhoto.HeaderText = "Фото";
             this.colPhoto.MinimumWidth = 6;
             this.colPhoto.Name = "colPhoto";
@@ -123,14 +105,55 @@ namespace DbUsers
             this.colEmail.ReadOnly = true;
             this.colEmail.Width = 200;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.ForeColor = System.Drawing.Color.Navy;
+            this.btnEdit.Location = new System.Drawing.Point(22, 239);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(132, 45);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Редагувати";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(285, 239);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(132, 45);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Вихід";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnTreeView
+            // 
+            this.btnTreeView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTreeView.ForeColor = System.Drawing.Color.Navy;
+            this.btnTreeView.Location = new System.Drawing.Point(232, 10);
+            this.btnTreeView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTreeView.Name = "btnTreeView";
+            this.btnTreeView.Size = new System.Drawing.Size(246, 45);
+            this.btnTreeView.TabIndex = 3;
+            this.btnTreeView.Text = "Open TreeView";
+            this.btnTreeView.UseVisualStyleBackColor = true;
+            this.btnTreeView.Click += new System.EventHandler(this.btnTreeView_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 456);
+            this.ClientSize = new System.Drawing.Size(723, 342);
+            this.Controls.Add(this.btnTreeView);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dgDateUsers);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Відомості про акторів";
             ((System.ComponentModel.ISupportInitialize)(this.dgDateUsers)).EndInit();
@@ -148,6 +171,7 @@ namespace DbUsers
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.Button btnTreeView;
     }
 }
 

@@ -23,40 +23,40 @@ namespace DbUsers
             _context = new EFContext();
             EFSeeder.SeedDatabase(_context);
             loadDateUsers();
+            
         }
 
         // метод для читання даних з БД і виведення в DateGrid
         private void loadDateUsers()
         {
-            //dgDateUsers.Rows.Clear();
-            //var query = _context.UserRoles
-            //    .AsQueryable();
+            dgDateUsers.Rows.Clear();
+            var query = _context.UserRoles
+                .AsQueryable();
 
-            //var list = query.Select(x => new
-            //{
-            //    Id = x.UserId,
-            //    Image = x.User.Image,
-            //    Name = x.User.NormalizedUserName+" "+x.User.UserName,
-            //    //UserName + " " + x.NormalizedUserName,
-            //    RoleName = x.Role.Name,
-            //    Email = x.User.Email
-            //})
-            //    .AsQueryable().ToList(); 
+            var list = query.Select(x => new
+            {
+                Id = x.UserId,
+                Image = x.User.Image,
+                Name = x.User.NormalizedUserName + " " + x.User.UserName,
+                //UserName + " " + x.NormalizedUserName,
+                RoleName = x.Role.Name,
+                Email = x.User.Email
+            })
+                .AsQueryable().ToList();
 
-            //foreach (var item in list)
-            //{
-            //    string path = Path.Combine(Directory.GetCurrentDirectory(), "images");
-            //    object[] row =
-            //    {
-            //        item.Id,
-            //        item.Image == null || !File.Exists(Path.Combine(path, item.Image)) ?
-            //        null: Image.FromStream(new MemoryStream(File.ReadAllBytes(Path.Combine(path, item.Image)))),
-            //        item.Name,
-            //        item.RoleName,
-            //        item.Email
-            //    };
-            //    this.dgDateUsers.Rows.Add(row);
-            //}
+            foreach (var item in list)
+            {
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "images");
+                object[] row =
+                {
+                    item.Id,
+                    item.Image == null ? null:Image.FromFile(Path.Combine(path, item.Image)),
+                    item.Name,
+                    item.RoleName,
+                    item.Email
+                };
+                dgDateUsers.Rows.Add(row);
+            }
 
             #region Begin work Category
 
@@ -81,14 +81,9 @@ namespace DbUsers
                 EditUserForm dlg = new EditUserForm(id);
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    if(!string.IsNullOrEmpty(dlg.oldPhoto))
-                    {
-                        if(File.Exists(dlg.oldPhoto))
-                        {
-                            File.Delete(dlg.oldPhoto);
-                        }
-                    }
+                   
                     loadDateUsers();
+                  
                 }
             }
         }
@@ -102,6 +97,7 @@ namespace DbUsers
         {
             TreeViewForm dlg = new TreeViewForm(_context);
             dlg.ShowDialog();
+            // Hide();
         }
     }
 }

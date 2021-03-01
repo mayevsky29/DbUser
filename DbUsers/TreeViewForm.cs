@@ -51,7 +51,7 @@ namespace DbUsers
 
             tvCategories.Nodes.Add(node);
         }
-
+        
         private void AddChild(TreeNode parent, CategoryVM breed)
         {
             TreeNode node = new TreeNode();
@@ -63,7 +63,6 @@ namespace DbUsers
         }
 
         
-
         private void tvCategories_BeforeExpand(object sender, TreeViewCancelEventArgs e)
         {
             if (e.Node.Nodes[0].Text == "")
@@ -89,14 +88,91 @@ namespace DbUsers
             }
         }
 
+        // Зберігання категорії в базу даних при додаванні в корінь
+        private void AddParentRoot(EFContext context, string urlSlug, string name)
+        {
+            context.Categories.Add(new Category
+            {
+                Name = name,
+                ParentId = null,
+                UrlSlug = urlSlug
+            });
+            context.SaveChanges();
+        }
+        // Додавання категорії в корінь
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            string nameCategory = tblName.Text;
+            string urlSlug = tblSlug.Text;
+            if (nameCategory == "")
+            {
+                MessageBox.Show("Заповніть всі поля");
+            }
+            else
+            {
+                AddParentRoot(_context, urlSlug, nameCategory);
+            }
+        }
 
+        // Зберігання категорії та елементів в базу даних при редагування
+        private void EditCategory(TreeNode selectedNode, string urlSlug, string name)
+        {
+            var node = _context.Categories
+                .SingleOrDefault(n => n.Name == selectedNode.Text);
+            node.Name = name;
+            node.UrlSlug = urlSlug;
+            
+            _context.SaveChanges();
+        }
 
+        // Редагування категорій
+        private void btnEditCategory_Click(object sender, EventArgs e)
+        {
+            string nameCategory = tblName.Text;
+            string urlSlug = tblSlug.Text;
+            if (nameCategory == "")
+            {
+                MessageBox.Show("Заповніть всі поля");
+            }
+            else
+            {
+                EditCategory(tvCategories.SelectedNode, urlSlug, nameCategory);
+            }
+        }
 
+        // Зберігання дочірнього елемента в базі даних після додавання
+        private void AddChildElement(TreeNode parent, string urlSlug, string name)
+        {
+            var parants = (CategoryVM)parent.Tag;
+            _context.Categories.Add(new Category
+            {
+                Name = name,
+                ParentId = parants.Id,
+                UrlSlug = urlSlug
+            });
+            _context.SaveChanges();
+        }
+        // Додавання дочірнього елемента
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nameCategory = tblName.Text;
+            string urlSlug = tblSlug.Text;
+            if (nameCategory == "")
+            {
+                MessageBox.Show("Заповніть всі поля");
+            }
+            else
+            {
+                AddChildElement(tvCategories.SelectedNode, urlSlug, nameCategory);
+            }
+        }
 
-
+                // Вихід
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+       
     }
 }
